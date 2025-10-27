@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { KanbanBoard } from './components/KanbanBoard/KanbanBoard';
 import { KanbanColumn, KanbanTask } from './components/KanbanBoard/KanbanBoard.types';
+import { LandingPage } from './components/LandingPage';
 
 const initialColumns: KanbanColumn[] = [
   { id: 'todo', title: 'To Do', color: '#94a3b8', taskIds: ['task-1', 'task-2', 'task-3'] },
@@ -94,6 +95,7 @@ const initialTasks: Record<string, KanbanTask> = {
 };
 
 function App() {
+  const [showDemo, setShowDemo] = useState(false);
   const [columns, setColumns] = useState<KanbanColumn[]>(initialColumns);
   const [tasks, setTasks] = useState<Record<string, KanbanTask>>(initialTasks);
 
@@ -157,12 +159,36 @@ function App() {
     });
   };
 
+  if (!showDemo && window.location.pathname === '/') {
+    return (
+      <div onClick={(e) => {
+        const target = e.target as HTMLElement;
+        if (target.tagName === 'A' && target.getAttribute('href') === '/demo') {
+          e.preventDefault();
+          setShowDemo(true);
+        }
+      }}>
+        <LandingPage />
+      </div>
+    );
+  }
+
   return (
     <div className="h-screen w-screen bg-neutral-100">
       <div className="h-full flex flex-col">
         <header className="bg-white border-b border-neutral-200 px-6 py-4">
-          <h1 className="text-2xl font-bold text-neutral-900">Kanban Board</h1>
-          <p className="text-sm text-neutral-600">Drag and drop tasks between columns to manage your workflow</p>
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-2xl font-bold text-neutral-900">Kanban Board</h1>
+              <p className="text-sm text-neutral-600">Drag and drop tasks between columns to manage your workflow</p>
+            </div>
+            <button
+              onClick={() => setShowDemo(false)}
+              className="px-4 py-2 text-sm text-neutral-600 hover:text-neutral-900 transition-colors"
+            >
+              ← Back to Home
+            </button>
+          </div>
         </header>
         <main className="flex-1 overflow-hidden">
           <KanbanBoard

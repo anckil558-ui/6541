@@ -1,6 +1,17 @@
-# Kanban Board Component Library
+# Kanban Board Component
 
 A production-grade, fully accessible Kanban Board component built from scratch using React, TypeScript, and Tailwind CSS.
+
+## Live Storybook
+
+[Deploy your Storybook to Chromatic, Vercel, or Netlify and add the URL here]
+
+## Installation
+
+```bash
+npm install
+npm run storybook
+```
 
 ## Features
 
@@ -151,12 +162,20 @@ function App() {
 
 The component includes comprehensive Storybook stories demonstrating:
 
-1. **Default** - Basic kanban board with sample data
-2. **Empty State** - Board with no tasks
-3. **With Many Tasks** - Board with 60+ tasks to test performance
-4. **Different Priorities** - Showcase all priority levels
+1. **Default** - Standard board with 4 columns and sample tasks
+2. **Empty State** - Empty board state
+3. **With Many Tasks** - Large dataset with 60+ tasks across columns
+4. **Different Priorities** - Showcase all priority levels (low, medium, high, urgent)
 5. **With WIP Limits** - Demonstrates work-in-progress limits
-6. **Interactive Demo** - Fully functional drag-and-drop
+6. **Interactive Demo** - Fully functional drag-and-drop playground
+7. **Mobile View** - Mobile responsive demonstration
+
+### Story Controls
+The Interactive Demo story includes controls for:
+- Toggle task priorities
+- Add/remove sample tasks
+- Adjust column configurations
+- Fully functional drag-and-drop
 
 Access stories at `http://localhost:6006` after running `npm run storybook`.
 
@@ -254,6 +273,28 @@ Every interactive element includes:
 
 MIT
 
-## Author
+## Architecture
 
-Built for the Design System Component Library frontend developer hiring challenge.
+This component is built using a clean, modular architecture:
+
+- **Component Layer**: Reusable UI components (KanbanBoard, KanbanColumn, KanbanCard, TaskModal)
+- **Primitive Layer**: Base components (Button, Modal, Avatar)
+- **Hook Layer**: Custom hooks for drag-and-drop and state management
+- **Utility Layer**: Helper functions for task and column operations
+
+The implementation uses native HTML5 Drag and Drop API without external libraries, ensuring full control over behavior and performance.
+
+## Technologies
+
+- React 18.3.1 - Component framework
+- TypeScript 5.5.3 - Type-safe development
+- Tailwind CSS 3.4.1 - Utility-first styling
+- Vite 5.4.2 - Build tooling
+- Storybook 8.6.14 - Component documentation
+- date-fns 4.1.0 - Date manipulation
+- clsx 2.1.1 - Conditional classes
+- Lucide React 0.344.0 - Icons
+
+## Contact
+
+[Your email address]

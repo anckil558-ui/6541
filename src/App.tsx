@@ -163,9 +163,13 @@ function App() {
     return (
       <div onClick={(e) => {
         const target = e.target as HTMLElement;
-        if (target.tagName === 'A' && target.getAttribute('href') === '/demo') {
-          e.preventDefault();
-          setShowDemo(true);
+        if (target.tagName === 'A') {
+          const href = target.getAttribute('href');
+          if (href === '/demo') {
+            e.preventDefault();
+            setShowDemo(true);
+            window.history.pushState({}, '', '/demo');
+          }
         }
       }}>
         <LandingPage />
@@ -183,7 +187,10 @@ function App() {
               <p className="text-sm text-neutral-600">Drag and drop tasks between columns to manage your workflow</p>
             </div>
             <button
-              onClick={() => setShowDemo(false)}
+              onClick={() => {
+                setShowDemo(false);
+                window.history.pushState({}, '', '/');
+              }}
               className="px-4 py-2 text-sm text-neutral-600 hover:text-neutral-900 transition-colors"
             >
               ← Back to Home

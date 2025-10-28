@@ -25,12 +25,6 @@ export const LandingPage = () => {
               >
                 GitHub
               </a>
-              <a
-                href="http://localhost:6006"
-                className="px-4 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition-colors"
-              >
-                View Storybook
-              </a>
             </nav>
           </div>
         </header>
@@ -45,16 +39,10 @@ export const LandingPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="#demo"
+              href="/demo"
               className="px-8 py-3 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition-colors font-medium"
             >
-              Try Demo
-            </a>
-            <a
-              href="http://localhost:6006"
-              className="px-8 py-3 border-2 border-neutral-300 text-neutral-700 rounded-lg hover:border-neutral-400 transition-colors font-medium"
-            >
-              View Storybook
+              Try Live Demo
             </a>
           </div>
         </section>
@@ -159,29 +147,18 @@ export const LandingPage = () => {
         </section>
 
         <section id="demo" className="py-20">
-          <h3 className="text-3xl font-bold text-center text-neutral-900 mb-8">
-            Ready to See It in Action?
-          </h3>
           <div className="bg-gradient-to-r from-sky-600 to-blue-600 rounded-2xl p-12 text-center text-white">
-            <h4 className="text-2xl font-bold mb-4">Explore the Component</h4>
+            <h3 className="text-3xl font-bold mb-4">Ready to See It in Action?</h3>
             <p className="text-sky-100 mb-8 max-w-2xl mx-auto">
-              Check out our comprehensive Storybook documentation with 7 interactive stories showcasing all
-              features, from empty states to large datasets.
+              Try the interactive demo to experience the full Kanban board functionality with drag-and-drop,
+              task management, and all the features in action.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="http://localhost:6006"
-                className="px-8 py-3 bg-white text-sky-600 rounded-lg hover:bg-neutral-50 transition-colors font-medium"
-              >
-                View Storybook
-              </a>
-              <a
-                href="/demo"
-                className="px-8 py-3 border-2 border-white text-white rounded-lg hover:bg-white hover:text-sky-600 transition-colors font-medium"
-              >
-                Try Live Demo
-              </a>
-            </div>
+            <a
+              href="/demo"
+              className="inline-block px-8 py-3 bg-white text-sky-600 rounded-lg hover:bg-neutral-50 transition-colors font-medium"
+            >
+              Try Live Demo
+            </a>
           </div>
         </section>
 
@@ -192,14 +169,11 @@ export const LandingPage = () => {
               <span className="text-neutral-600">Kanban Board Component</span>
             </div>
             <div className="flex space-x-6">
-              <a href="#" className="text-neutral-600 hover:text-neutral-900 transition-colors">
-                Documentation
+              <a href="/demo" className="text-neutral-600 hover:text-neutral-900 transition-colors">
+                Live Demo
               </a>
               <a href="https://github.com" className="text-neutral-600 hover:text-neutral-900 transition-colors">
                 GitHub
-              </a>
-              <a href="http://localhost:6006" className="text-neutral-600 hover:text-neutral-900 transition-colors">
-                Storybook
               </a>
             </div>
           </div>

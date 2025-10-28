@@ -44,6 +44,12 @@ export const LandingPage = () => {
             >
               Try Live Demo
             </a>
+            <a
+              href="/storybook"
+              className="px-8 py-3 border-2 border-neutral-300 text-neutral-700 rounded-lg hover:border-neutral-400 transition-colors font-medium"
+            >
+              View Storybook
+            </a>
           </div>
         </section>
 
@@ -150,15 +156,23 @@ export const LandingPage = () => {
           <div className="bg-gradient-to-r from-sky-600 to-blue-600 rounded-2xl p-12 text-center text-white">
             <h3 className="text-3xl font-bold mb-4">Ready to See It in Action?</h3>
             <p className="text-sky-100 mb-8 max-w-2xl mx-auto">
-              Try the interactive demo to experience the full Kanban board functionality with drag-and-drop,
-              task management, and all the features in action.
+              Try the interactive demo or explore our comprehensive Storybook documentation with 7 interactive
+              stories showcasing all features.
             </p>
-            <a
-              href="/demo"
-              className="inline-block px-8 py-3 bg-white text-sky-600 rounded-lg hover:bg-neutral-50 transition-colors font-medium"
-            >
-              Try Live Demo
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="/demo"
+                className="px-8 py-3 bg-white text-sky-600 rounded-lg hover:bg-neutral-50 transition-colors font-medium"
+              >
+                Try Live Demo
+              </a>
+              <a
+                href="/storybook"
+                className="px-8 py-3 border-2 border-white text-white rounded-lg hover:bg-white hover:text-sky-600 transition-colors font-medium"
+              >
+                View Storybook
+              </a>
+            </div>
           </div>
         </section>
 
@@ -171,6 +185,9 @@ export const LandingPage = () => {
             <div className="flex space-x-6">
               <a href="/demo" className="text-neutral-600 hover:text-neutral-900 transition-colors">
                 Live Demo
+              </a>
+              <a href="/storybook" className="text-neutral-600 hover:text-neutral-900 transition-colors">
+                Storybook
               </a>
               <a href="https://github.com" className="text-neutral-600 hover:text-neutral-900 transition-colors">
                 GitHub
